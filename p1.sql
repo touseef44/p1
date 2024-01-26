@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 17, 2023 at 07:51 AM
+-- Generation Time: Jan 26, 2024 at 02:57 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.0
 
@@ -110,6 +110,19 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `avatar`, `name`, `email`, `role`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, '/uploads/avatar.jpeg', 'dev', 'touseef@cybernest.com', 'user', NULL, '$2y$10$X.a8f9hhVj7bzow19wl7u.EJtJMv/41Gjns/qHzeRwj1taD7R5Dq.', NULL, '2024-01-26 04:04:23', '2024-01-26 04:04:23'),
+(2, '/uploads/avatar.jpeg', 'Dr. Reed Bradtke IV', 'dallin.robel@example.net', 'user', NULL, '$2y$10$HF4cd07Ag5Jrq0ZfS9Mb4ue3IUc/HOxoD.qoEgaCq.NrgZ/SdsWOG', NULL, '2024-01-26 04:47:37', '2024-01-26 04:47:37'),
+(3, '/uploads/avatar.jpeg', 'Dr. Torey Oberbrunner Sr.', 'qweber@example.com', 'user', NULL, '$2y$10$Z1d8qPj0zuKB5zveVKSnOOfQQ7INqxwoxAEFo/oaUH13W7wvFwGje', NULL, '2024-01-26 04:47:37', '2024-01-26 04:47:37'),
+(4, '/uploads/avatar.jpeg', 'Gabriel D\'Amore I', 'batz.geraldine@example.org', 'user', NULL, '$2y$10$pyyMXifbAg3eGQhrqKE0Suv1dbQc8kFPKrYQiGg0F7dBcgP29Y7l6', NULL, '2024-01-26 04:47:37', '2024-01-26 04:47:37'),
+(5, '/uploads/avatar.jpeg', 'Precious Bashirian PhD', 'zander.effertz@example.org', 'user', NULL, '$2y$10$f8s4NL5wQJhoi8iSC0BTvetJ4PFasSplwd5COUScWQPcE1uoOyTZW', NULL, '2024-01-26 04:47:37', '2024-01-26 04:47:37'),
+(6, '/uploads/avatar.jpeg', 'Brennon Abernathy', 'bjacobson@example.com', 'user', NULL, '$2y$10$9TI//XZcHbXz/JpZhh6CD.cMdixp.DD1tTDRSuSznJs2vN2w5GNsa', NULL, '2024-01-26 04:47:37', '2024-01-26 04:47:37'),
+(7, '/uploads/avatar.jpeg', 'Admin User', 'admin@example.com', 'admin', NULL, '$2y$10$npWtS8gXH7W/W/2gZVVawuxt1vlNMWVyOeOV7NXk4wODUfNxsWUXy', 'cHoTsyu1ds4YugW0xo8QHvEKfe4dqcdTvWkkDc4ZDfYSRTpfzdp15jVLvVj6', '2024-01-26 04:50:31', '2024-01-26 04:50:31');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -173,7 +186,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
