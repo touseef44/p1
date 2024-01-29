@@ -8,6 +8,7 @@
   <!-- General CSS Files -->
   <link rel="stylesheet" href="{{ asset('admin/assets/modules/bootstrap/css/bootstrap.min.css') }}">
   <link rel="stylesheet" href="{{ asset('admin/assets/modules/fontawesome/css/all.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('frontend/css/toastr.min.css') }}">
 
   <!-- CSS Libraries -->
   <link rel="stylesheet" href="{{ asset("admin/assets/modules/jqvmap/dist/jqvmap.min.css") }}">
@@ -893,11 +894,18 @@
 
   <!-- Page Specific JS File -->
   <script src="{{ asset("admin/assets/js/page/index-0.js")}}"></script>
-  
+  <script src="{{ asset('frontend/js/toastr.min.js') }}"></script>
   <!-- Template JS File -->
   <script src="{{ asset("admin/assets/js/scripts.js") }}"></script>
   <script src="{{ asset("admin/assets/js/custom.js") }}"></script>
-
+  <script>
+    @if ($errors->any())
+        @foreach($errors->all() as $error)
+         toastr.error("{{ $error }}")
+        @endforeach
+    @endif
+  </script>
   @yield('script');
 </body>
+
 </html>

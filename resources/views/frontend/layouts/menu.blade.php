@@ -15,6 +15,14 @@
                 <li class="nav-item">
                     <a class="nav-link" href="about.html">about</a>
                 </li>
+                @guest
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url ('/login') }}">login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/register') }}">register</a>
+                </li>
+                @endguest
                 <li class="nav-item">
                     <a class="nav-link" href="menu.html">menu</a>
                 </li>
