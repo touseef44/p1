@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\frontend\DashBoardController;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -20,9 +21,20 @@ use Illuminate\Support\Facades\Route;
 // });
 Route::get('/',[FrontendController::class,'index']);
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
+
+//Route::get('/dashboard',[DashBoardController::class,'index'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::middleware(['auth'])->group(function () {
+    // Your authenticated routes go here
+
+    Route::get('/dashboard',[DashBoardController::class,'index'])->name('dashboard');
+    // Add more authenticated routes as needed
+});
+
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
