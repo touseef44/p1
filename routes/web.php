@@ -1,8 +1,11 @@
 <?php
 
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\frontend\DashBoardController;
 use App\Http\Controllers\Frontend\FrontendController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -48,3 +51,11 @@ require __DIR__.'/auth.php';
 include __DIR__.'/admin.php';
 
 
+
+Route::resource('posts', PostController::class);
+Route::post('comments', [CommentController::class, 'store'])->name('comments.store');
+//practice
+Route::get('/user/profile',function(){
+    $user = User::with('profile')->find(2);
+    dd($user->profile);
+});

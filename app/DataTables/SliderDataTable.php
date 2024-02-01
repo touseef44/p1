@@ -27,7 +27,12 @@ class SliderDataTable extends DataTable
               $delete = "<a class='btn btn-danger'>Delete</a>";
               return $edit.$delete;
             })
+            ->addColumn('image',function($query){
+              return "<img src='$query->image'  width='50' height='50'/>";
+            })
+            ->rawColumns(['image','action'])
             ->setRowId('id');
+            
     }
 
     /**

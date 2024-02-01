@@ -1,0 +1,46 @@
+DELETE Command:
+The DELETE command is used to remove specific rows from a table based on a condition.
+It allows you to specify a condition using the WHERE clause to filter the rows to be deleted.
+
+TRUNCATE:
+removes all rows from the table, and it cannot be used with a WHERE clause.
+
+----------------------------------------------------------------------------------------------------
+PRIMARY KEY:
+    A combination of a NOT NULL and UNIQUE
+    There can be only one PRIMARY KEY constraint in a table.
+    Used as a Foreign Key.
+UNIQUE KEY:
+    key columns can contain NULL values, but each non-NULL value must be unique.
+    A table can have multiple UNIQUE constraints.
+    Not Used as a Foreign Key.
+-----------------------------------------------------------------------------------------------------
+
+CASCADE:
+    When a referenced row in the parent table is deleted, 
+    the corresponding rows in the child table are also deleted.
+
+SET NULL:
+    When a referenced row in the parent table is deleted, 
+    the corresponding foreign key values in the child table are set to NULL.
+
+SET DEFAULT:
+    Similar to SET NULL, but the foreign key values are set to their default values.
+
+NO ACTION:
+    This is the default behavior. It prevents the deletion of a referenced row in the parent table 
+    if there are corresponding rows in the child table.
+
+RESTRICT:
+    Similar to NO ACTION. It prevents the deletion of a referenced row in the parent table 
+    if there are corresponding rows in the child table.
+-----------------------------------------------------------------------------------------------------
+Indexes are most effective for columns used in WHERE clauses, JOIN conditions, and ORDER BY clauses.
+------------------------------------------------------------------------------------------------------
+
+HAVING is used in conjunction with GROUP BY, while WHERE is used independently of GROUP BY.
+If there is no GROUP BY clause, the HAVING clause is treated like a WHERE clause.
+
+-----------------------------------------------------------------------------------------------------
+
+    
