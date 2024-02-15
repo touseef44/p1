@@ -52,10 +52,13 @@ include __DIR__.'/admin.php';
 
 
 
-Route::resource('posts', PostController::class);
-Route::post('comments', [CommentController::class, 'store'])->name('comments.store');
-//practice
-Route::get('/user/profile',function(){
-    $user = User::with('profile')->find(2);
-    dd($user->profile);
-});
+// Route::resource('posts', PostController::class);
+// Route::post('comments', [CommentController::class, 'store'])->name('comments.store');
+// //practice
+// Route::get('/user/profile',function(){
+//     $user = User::with('profile')->find(2);
+//     dd($user->profile);
+// });
+
+
+// user-trial-sub

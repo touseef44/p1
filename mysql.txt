@@ -44,3 +44,6 @@ If there is no GROUP BY clause, the HAVING clause is treated like a WHERE clause
 -----------------------------------------------------------------------------------------------------
 
     
+
+Stripe
+234SFd35%$3Dg   
