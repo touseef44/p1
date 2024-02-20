@@ -126,6 +126,35 @@ namespace App\Models{
 
 namespace App\Models{
 /**
+ * App\Models\SubscriptionPlan
+ *
+ * @property int $id
+ * @property string $name
+ * @property string $stripe_price_id
+ * @property int|null $trial_days
+ * @property float $amount
+ * @property int $type 0->monthly, 1->yearly, 2->lifetime
+ * @property int $enabled 0->disabled, 1->enabled
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|SubscriptionPlan newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|SubscriptionPlan newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|SubscriptionPlan query()
+ * @method static \Illuminate\Database\Eloquent\Builder|SubscriptionPlan whereAmount($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SubscriptionPlan whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SubscriptionPlan whereEnabled($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SubscriptionPlan whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SubscriptionPlan whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SubscriptionPlan whereStripePriceId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SubscriptionPlan whereTrialDays($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SubscriptionPlan whereType($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SubscriptionPlan whereUpdatedAt($value)
+ */
+	class SubscriptionPlan extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
  * App\Models\User
  *
  * @property int $id
@@ -138,6 +167,7 @@ namespace App\Models{
  * @property string|null $remember_token
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property int $is_subscribed
  * @property-read \Illuminate\Notifications\DatabaseNotificationCollection<int, \Illuminate\Notifications\DatabaseNotification> $notifications
  * @property-read int|null $notifications_count
  * @property-read \App\Models\Profile|null $profile
@@ -152,6 +182,7 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|User whereEmail($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereEmailVerifiedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|User whereIsSubscribed($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User wherePassword($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereRememberToken($value)

@@ -5,6 +5,7 @@ use App\Http\Controllers\frontend\DashBoardController;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SubscriptionController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
@@ -29,21 +30,26 @@ Route::get('/',[FrontendController::class,'index']);
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
 //Route::get('/dashboard',[DashBoardController::class,'index'])->middleware(['auth', 'verified'])->name('dashboard');
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['userAuth'])->group(function () {
     // Your authenticated routes go here
-
     Route::get('/dashboard',[DashBoardController::class,'index'])->name('dashboard');
-    // Add more authenticated routes as needed
+
+});
+
+Route::middleware(['isAuth'])->group(function () {
+    // Your authenticated routes go here
+    Route::get('/subscription',[SubscriptionController::class,'loadsubscription'])->name('subscription');
+
+
 });
 
 
 
-
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
+// Route::middleware('auth')->group(function () {
+//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+// });
 
 require __DIR__.'/auth.php';
 
