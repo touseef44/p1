@@ -6,6 +6,7 @@ use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SubscriptionController;
+use App\Models\SubscriptionPlan;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
@@ -39,7 +40,7 @@ Route::middleware(['userAuth'])->group(function () {
 Route::middleware(['isAuth'])->group(function () {
     // Your authenticated routes go here
     Route::get('/subscription',[SubscriptionController::class,'loadsubscription'])->name('subscription');
-
+    Route::post('/get-plan-details',[SubscriptionController::class,'getPlanDetails']);
 
 });
 
