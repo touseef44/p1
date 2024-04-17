@@ -23,3 +23,32 @@ The variable is readily available from the path app\Http\Middleware\VerifyCsrfTo
 ------------------------------------------------------------------------------------------------------------
 The with() function in Laravel is used to eager load relationships for the retrieved models. It's typically used
 when retrieving models that have relationships with other models to avoid the N+1 query problem.
+
+-------------------------------------------------------------------------------------------------
+One Has Through                  
+        post->user->country
+        //model post.php
+        public function post(){
+        return $this->hasOneThrough(country::class,user::class);
+        }
+
+-------------------------------------------------------------------------------------------------------
+Has Many Through
+
+country -> users -> posts
+find all posts each country
+
+//country.php (model file)
+public function posts(){
+  return $this->hasManyThrough(post::class,user::class);
+}
+
+-----------------------------------------------------------------------------------------------------------
+
+has one of many 
+    customer table->orders table
+    find lastestorder,odertest, max,min
+    return $this->hasOne(order::class)->->latestOfMany();
+                                         oldestOfMany();;
+
+---------------------------------------------------------------------------------------------------------                                         
