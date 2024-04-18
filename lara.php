@@ -51,4 +51,63 @@ has one of many
     return $this->hasOne(order::class)->->latestOfMany();
                                          oldestOfMany();;
 
----------------------------------------------------------------------------------------------------------                                         
+---------------------------------------------------------------------------------------------------------
+one to one polymorphic     
+
+User:                                        public function image()
+     id                                      return $this->morphOne(image::class, 'imageable');
+     name
+post:
+     id 
+     title     
+
+images:                                    Image.php
+    id                                      public function imageable()
+    url                                     return $this>morphTO() 
+    imagealbe_id
+    imageable_type
+         
+---------------------------------------------------------------------------------------------------------
+one to many polymorphoc
+
+
+post:                                        public function comment()
+     id                                      return $this->morphMany(image::class, 'imageable');
+     name
+video:
+     id 
+     url  
+
+comments:                                    Comment.php
+    id                                      public function commentable()
+    detail                                     return $this>morphTo() 
+    commentalbe_id
+    commentalbe_type
+
+-----------------------------------------------------------------------------------------------------------
+many to many polymorphic
+
+
+post:                                        public function tags()
+     id                                      return $this->morphToMany(tag::class, 'taggables');
+     name
+video:
+     id 
+     url  
+
+tags:                                    Tag.php
+    id                                      public function posts()
+    name                                     return $this>morphByMany(post::class, 'taggalbes') 
+    taggalbe_id
+    taggalbe_type                           public function videos()
+                                            return $this->morphByMany(video::class, 'taggalbes')
+
+------------------------------------------------------------------------------------------------------------
+1. What is SQL injection and now to handle it?
+2. What is Laravel trigger & how to implement it?
+3. How to prevent database?
+4. What is database indexing?
+
+
+
+
