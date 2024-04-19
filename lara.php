@@ -108,6 +108,35 @@ tags:                                    Tag.php
 3. How to prevent database?
 4. What is database indexing?
 
+----------------------------------------------------------------------------------------------------
+                                               Chunk 
 
+User::chunk(1000, function ($users) {
+    foreach ($users as $user) {
+        // Process each user
+    }
+});
 
+The callback function provided to the chunk method is executed for each chunk of records.
 
+                                              Lazy
+                                              $users = User::lazy();
+foreach ($users as $user) {
+    // Process each user
+}
+It's suitable for scenarios where you need to process records one by one 
+without loading the entire dataset into memory.
+NO need callback function
+worked more than one table as relationship.
+
+                                              Cursor
+
+Only worked for single table.                                              
+$users = User::cursor();
+foreach ($users as $user) {
+    // Process each user
+}
+
+Performance: cursor is generally more efficient for read-heavy operations because it doesn't instantiate 
+model instances for each record, whereas chunk and lazy do.
+-------------------------------------------------------------------------------------------------
